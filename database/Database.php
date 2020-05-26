@@ -1,16 +1,16 @@
 <?php
 
 class Database{
-    
+
     public $conn;
 
     public function __construct()
     {
-        $configs = include "./config.php";
+        $configs = include "../config.php";
         $host = $configs['host'];
         $db = $configs['db'];
         $username = $configs['username'];
-        $pass = $configs['pass'];   
+        $pass = $configs['pass'];
         $this->conn = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $username, $pass);
     }
 
@@ -21,7 +21,7 @@ class Database{
             $sql = "INSERT INTO
             users (username, pass, email)
             VALUES (:username, :pass, :email)";
-            
+
             $stmt = $this->conn->prepare($sql) or die("Praparing sql statement failed.");
 
             $stmt->bindParam(':username', $user->username);
@@ -40,7 +40,7 @@ class Database{
         try {
             $sql = "SELECT pass FROM users
             WHERE username = (:username)";
-            
+
             $stmt = $this->conn->prepare($sql) or die("Praparing sql statement failed.");
 
             $stmt->bindParam(':username', $username);

@@ -1,8 +1,8 @@
 <?php
 
-include "./User.php";
-include "./validation.php";
-include "./Database.php";
+include "../entities/User.php";
+include "../util/validation.php";
+include "../database/Database.php";
 
 function init()
 {
@@ -14,7 +14,7 @@ function init()
     $fields = extract_login_variables();
     $username = $fields['username'];
     $password = $fields['password'];
-    
+
     $database = new Database();
     $hash = $database->get_pass_from_user($username);
 

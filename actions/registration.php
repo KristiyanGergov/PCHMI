@@ -1,8 +1,8 @@
 <?php
 
-include "./User.php";
-include "./validation.php";
-include "./Database.php";
+include "../entities/User.php";
+include "../util/validation.php";
+include "../database/Database.php";
 
 function init()
 {
@@ -24,7 +24,7 @@ function init()
         $password,
         $email
     );
-    
+
     $database = new Database();
     $database->add_user($user);
 }
