@@ -1,4 +1,6 @@
 # Shisha Share
+In order to access the website go to:
+[Shisha Share](http://3.22.254.117/project/)
 
 ## Deployment
 ```
