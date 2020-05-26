@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] != "POST")
     return;
 }
 
-function extract_variables()
+function extract_registration_variables()
 {
     $error = false;
 
@@ -17,7 +17,7 @@ function extract_variables()
     {
         $username = test_input($_POST["username"]);
 
-        $password = hash("sha265", test_input($_POST["password"]));
+        $password = hash("sha256", test_input($_POST["password"]));
 
         $email = test_input($_POST["email"]);
     }
@@ -25,6 +25,22 @@ function extract_variables()
         'username' => $username,
         'password' => $password,
         'email' => $email
+    ];
+}
+
+function extract_login_variables()
+{
+    $error = false;
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST")
+    {
+        $username = test_input($_POST["username"]);
+
+        $password = hash("sha256", test_input($_POST["password"]));
+    }
+    return [
+        'username' => $username,
+        'password' => $password
     ];
 }
 

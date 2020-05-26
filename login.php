@@ -11,22 +11,18 @@ function init()
         return;
     }
 
-    $fields = extract_registration_variables();
+    $fields = extract_login_variables();
     $username = $fields['username'];
     $password = $fields['password'];
-    $email = $fields['email'];
-
-    echo $username;
-    echo $password;
-
-    $user = new User(
-        $username,
-        $password,
-        $email
-    );
     
     $database = new Database();
-    $database->add_user($user);
+    $hash = $database->get_pass_from_user($username);
+
+    if($hash != $password) {
+        echo "Enter correct password, ve mindil";
+        return;
+    }
+    echo "Brao vutre si";
 }
 
 init();
