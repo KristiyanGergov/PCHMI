@@ -11,9 +11,8 @@
 </head>
 <body>
 <?php
-if(!empty($_SESSION["token"])) {
-    echo $_SESSION["token"];
-    echo "lalalalal";
+print_r($_SESSION);
+if(isset($_SESSION["token"])) {
     echo '<div class="heading"><h1>HAHAHHA</h1></div>';
 }
 ?>

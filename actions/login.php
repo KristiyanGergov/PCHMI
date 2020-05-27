@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 include "../entities/User.php";
 include "../util/validation.php";
