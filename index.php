@@ -20,7 +20,8 @@
     <h1>SHISHA SHARE</h1>
 </div>
 
-<a href="./pages/login.php"><h3 style="margin-right: 60px; float: right; color: white">Profile Login/Register</h3></a>
+<a href="./pages/login.php"><h3 style="margin-right: 60px; float: right; color: white">Login</h3></a>
+<a href="./pages/register.html"><h3 style="margin-right: 60px; float: right; color: white">Register</h3></a>
 
 <br/>
 <div class="topnav">
