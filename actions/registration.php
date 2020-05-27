@@ -16,9 +16,6 @@ function init()
     $password = $fields['password'];
     $email = $fields['email'];
 
-    echo $username;
-    echo $password;
-
     $user = new User(
         $username,
         $password,

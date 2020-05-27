@@ -14,5 +14,6 @@ CREATE TABLE items (
   price       FLOAT,
   available   BOOLEAN,
   type        VARCHAR(63),
-  user        INT
+  user        INT,
+  image       VARCHAR(63)
 );

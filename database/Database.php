@@ -35,6 +35,29 @@ class Database{
         }
     }
 
+    function add_item($item){
+        try {
+            $sql = "INSERT INTO
+            items (name, description, price, available, type, user, image)
+            VALUES (:name, :description, :price, :available, :type, :user, :image)";
+
+            $stmt = $this->conn->prepare($sql) or die("Praparing sql statement failed.");
+
+            $stmt->bindParam(':name', $item->name);
+            $stmt->bindParam(':description', $item->description);
+            $stmt->bindParam(':price', $item->price);
+            $stmt->bindParam(':available', $item->available);
+            $stmt->bindParam(':type', $item->type);
+            $stmt->bindParam(':user', $item->user);
+            $stmt->bindParam(':image', $item->image);
+
+            $stmt->execute();
+            echo "Record added successfully";
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+        }
+    }
+
     function get_pass_from_user($username){
 
         try {
