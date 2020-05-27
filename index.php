@@ -9,8 +9,10 @@
 </head>
 <body>
 <?php
-    if(empty($_SESSION["token"])) {
-        echo <div class="heading"><h1>$_SESSION["token"]</h1></div>;
+    if(!empty($_SESSION["token"])) {
+        echo $_SESSION["token"];
+        echo "lalalalal";
+        echo '<div class="heading"><h1>HAHAHHA</h1></div>';
     }
 ?>
 <div class="heading" style="size: 500px">
@@ -18,7 +20,7 @@
     <h1>SHISHA SHARE</h1>
 </div>
 
-<a href="./pages/login.html"><h3 style="margin-right: 60px; float: right; color: white">Profile Login/Register</h3></a>
+<a href="./pages/login.php"><h3 style="margin-right: 60px; float: right; color: white">Profile Login/Register</h3></a>
 
 <br/>
 <div class="topnav">
