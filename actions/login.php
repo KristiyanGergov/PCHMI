@@ -22,7 +22,10 @@ function init()
         echo "Enter correct password, ve mindil";
         return;
     }
-    echo "Brao vutre si";
+    $sessionID = "lalalalalalla";
+    $_SESSION["token"] = $sessionID;
+    echo $_SESSION["token"];
+    echo '<a href="../index.html">back!</a>';
 }
 
 init();
