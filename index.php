@@ -6,30 +6,27 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="styles/index.css">
+    <link rel="stylesheet" type="text/css" href="styles/body.css">
+    <link rel="stylesheet" type="text/css" href="styles/navigation.css">
 </head>
 <body>
 <?php
-    if(!empty($_SESSION["token"])) {
-        echo $_SESSION["token"];
-        echo "lalalalal";
-        echo '<div class="heading"><h1>HAHAHHA</h1></div>';
-    }
+if(!empty($_SESSION["token"])) {
+    echo $_SESSION["token"];
+    echo "lalalalal";
+    echo '<div class="heading"><h1>HAHAHHA</h1></div>';
+}
 ?>
-<div class="heading" style="size: 500px">
-    <img src="aeon.png" alt="aeon" class="aeon">
-    <h1>SHISHA SHARE</h1>
-</div>
-
-<a href="./pages/login.php"><h3 style="margin-right: 60px; float: right; color: white">Profile Login/Register</h3></a>
-
-<br/>
-<div class="topnav">
-    <a class="active" href="#shisha">Shisha</a>
-    <a href="#cups">Cups</a>
-    <a href="#consumables">Consumables</a>
-    <a href="#services">Services</a>
-    <a href="#add">Add</a>
-</div>
+<?php echo "<style>
+#shisha {
+    font-size: larger;
+    color: black;
+    background-color: green;
+}
+</style>";
+?>
+<?php include "header.html";?>
+<?php include "topnavigation.html";?>
 
 <hr style="margin-top: 20px">
 
