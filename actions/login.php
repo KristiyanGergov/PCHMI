@@ -26,6 +26,7 @@ function init()
     $_SESSION["token"] = $sessionID;
     echo $_SESSION["token"];
     echo '<a href="../index.html">back!</a>';
+    header("Location: ../index.php");
 }
 
 init();
