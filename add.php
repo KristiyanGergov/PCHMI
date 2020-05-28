@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-//if (!isset($_SESSION["token"])) {
-//    header("Location: add.php");
-//}
+if(!isset($_SESSION["token"])) {
+    header("Location: view/login.php");
+}
 ?>
 
 <!DOCTYPE html>

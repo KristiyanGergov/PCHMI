@@ -57,7 +57,7 @@ function extract_item_variables()
 
         $price = test_input($_POST["price"]);
 
-        $available = test_input($_POST["available"]);
+        $available = isset($_POST["available"]) ? test_input($_POST["available"]) : false;
 
         $type = ($_POST["type"]);
 

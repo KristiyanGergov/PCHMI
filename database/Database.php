@@ -7,10 +7,14 @@ class Database{
     public function __construct()
     {
         $configs = include "../config.php";
-        $host = $configs['host'];
-        $db = $configs['db'];
-        $username = $configs['username'];
-        $pass = $configs['pass'];
+        $host = 'localhost';
+        $db = 'shisha_share';
+        $username = 'root';
+        $pass = '1234';
+        // $host = $configs['host'];
+        // $db = $configs['db'];
+        // $username = $configs['username'];
+        // $pass = $configs['pass'];
         $this->conn = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $username, $pass);
     }
 
@@ -82,6 +86,25 @@ class Database{
             $stmt->execute();
             $pass = $stmt->fetchColumn();
             return $pass;
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+        }
+    }
+
+    function get_items($type, $page){
+        try {
+            $sql = "SELECT * from items
+            WHERE type = (:type)";
+
+            $stmt = $this->conn->prepare($sql) or die("Praparing sql statement failed.");
+            $stmt->bindParam(':type', $type);
+            $stmt->execute();
+
+            $rows = array();
+            while($result = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $rows[] = $result;
+            }
+            return $rows;
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
         }
