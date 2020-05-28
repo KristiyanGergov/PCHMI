@@ -17,15 +17,6 @@ if(isset($_SESSION["token"])) {
 }
 ?>
 
-
-<?php echo "<style>
-#shisha {
-    font-size: larger;
-    color: black;
-    background-color: green;
-}
-</style>";
-?>
 <?php include "view/header.html";?>
 <?php include "view/topnavigation.html";?>
 

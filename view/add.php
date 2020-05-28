@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="styles/index.css">
-    <link rel="stylesheet" type="text/css" href="styles/body.css">
-    <link rel="stylesheet" type="text/css" href="styles/navigation.css">
-    <link rel="stylesheet" type="text/css" href="styles/input.css">
+    <link rel="stylesheet" type="text/css" href="../styles/index.css">
+    <link rel="stylesheet" type="text/css" href="../styles/body.css">
+    <link rel="stylesheet" type="text/css" href="../styles/navigation.css">
+    <link rel="stylesheet" type="text/css" href="../styles/input.css">
 </head>
 <body>
 
@@ -25,7 +25,7 @@
 
 <div class="row">
     <div class="column" style="background-color:#aaa;">
-        <img src="pictures/aeon.png" alt="aeon">
+        <img src="../pictures/aeon.png" alt="aeon">
     </div>
 
     <div class="column" style="text-align: center; background-color:#bbb;">
