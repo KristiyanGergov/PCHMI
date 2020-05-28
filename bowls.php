@@ -1,9 +1,14 @@
 <?php
     session_start();
-    // include $_SERVER['DOCUMENT_ROOT'] . "/PCHMI/database";
     include "database/Database.php";
+    include "entities/Item.php";
+
     $db = new Database();
-    $rows = $db->get_items("shisha", 1);
+    $rows = $db->get_items("bowl", 1);
+    $items = [];
+    foreach ($rows as $row) {
+        $items[] = new Item($row['name'], $row['description'], $row['price'], $row['available'], $row['type'], $row['user'], $row['image']);
+    }
 ?>
 
 <!DOCTYPE html>
@@ -42,14 +47,7 @@
 </div>
 
 <?php
-    include "entities/Item.php";
     include "actions/generate_item_list.php";
-
-    $items = [];
-    foreach ($rows as $row) {
-        $items[] = new Item($row['name'], $row['description'], $row['price'], $row['available'], $row['type'], $row['user'], $row['image']);
-    }
-
     echo generate_item_rows($items);
 ?>
 

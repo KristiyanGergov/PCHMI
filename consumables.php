@@ -1,5 +1,14 @@
 <?php
-session_start();
+    session_start();
+    include "database/Database.php";
+    include "entities/Item.php";
+
+    $db = new Database();
+    $rows = $db->get_items("consumable", 1);
+    $items = [];
+    foreach ($rows as $row) {
+        $items[] = new Item($row['name'], $row['description'], $row['price'], $row['available'], $row['type'], $row['user'], $row['image']);
+    }
 ?>
 
 <!DOCTYPE html>
@@ -20,8 +29,8 @@ session_start();
 }
 </style>";
 ?>
-<?php include "view/header.php"; ?>
-<?php include "view/topnavigation.html"; ?>
+<?php include "view/header.php";?>
+<?php include "view/topnavigation.html";?>
 
 <hr style="margin-top: 20px">
 
@@ -37,29 +46,10 @@ session_start();
     <a href="#">&raquo;</a>
 </div>
 
-
-<div class="row">
-    <div class="column" style="background-color:#aaa;">
-        <img src="pictures/aeon.png" alt="aeon">
-        <div class="name">Name of product</div>
-        <div class="price">Price of product</div>
-    </div>
-    <div class="column" style="background-color:#bbb;">
-        <img src="pictures/aeon.png" alt="aeon">
-        <div class="name">Name of product</div>
-        <div class="price">Price of product</div>
-    </div>
-    <div class="column" style="background-color:#ccc;">
-        <img src="pictures/aeon.png" alt="aeon">
-        <div class="name">Name of product</div>
-        <div class="price">Price of product</div>
-    </div>
-    <div class="column" style="background-color:#ccc;">
-        <img src="pictures/aeon.png" alt="aeon">
-        <div class="name">Name of product</div>
-        <div class="price">Price of product</div>
-    </div>
-</div>
+<?php
+    include "actions/generate_item_list.php";
+    echo generate_item_rows($items);
+?>
 
 </body>
 </html>
