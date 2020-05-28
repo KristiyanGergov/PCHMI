@@ -7,5 +7,5 @@ return [
 
     'username' => 'root',
 
-    'pass' => ''
+    'pass' => '1234'
 ];
