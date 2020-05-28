@@ -10,11 +10,7 @@ class Database{
         $host = 'localhost';
         $db = 'shisha_share';
         $username = 'root';
-        $pass = '1234';
-        // $host = $configs['host'];
-        // $db = $configs['db'];
-        // $username = $configs['username'];
-        // $pass = $configs['pass'];
+        $pass = '';
         $this->conn = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $username, $pass);
     }
 

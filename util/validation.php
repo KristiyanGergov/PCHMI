@@ -62,13 +62,15 @@ function extract_item_variables()
         $type = ($_POST["type"]);
 
         $user = ($_SESSION["user"]);
-        
-        $target_dir = "../pictures/";
 
-        $str=rand(); 
-        $result = md5($str); 
+        $target_dir = "pictures/";
 
-        $target_file = $target_dir . $result . time();
+        $str=rand();
+        $result = md5($str);
+
+        $target_file = "../" . $target_dir . $result . time();
+        $database_file = $target_dir . $result . time();
+
         $uploadOk = 1;
         $imageFileType = strtolower(pathinfo($_FILES["image"]["name"],PATHINFO_EXTENSION));
 
@@ -115,7 +117,7 @@ function extract_item_variables()
         'available' => $available,
         'type' => $type,
         'user' => $user,
-        'image' => $target_file
+        'image' => $database_file
     ];
 }
 
