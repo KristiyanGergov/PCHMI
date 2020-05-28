@@ -1,6 +1,7 @@
 <?php
     session_start();
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="styles/navigation.css">
 </head>
 <body>
+
 <?php
 print_r($_SESSION);
 if(isset($_SESSION["token"])) {
@@ -17,7 +19,7 @@ if(isset($_SESSION["token"])) {
 }
 ?>
 
-<?php include "view/header.html";?>
+<?php include "view/header.php";?>
 <?php include "view/topnavigation.html";?>
 
 <hr style="margin-top: 20px">
