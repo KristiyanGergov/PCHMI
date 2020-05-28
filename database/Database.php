@@ -37,6 +37,17 @@ class Database{
 
     function add_item($item){
         try {
+
+            $sql = "SELECT id FROM users
+            WHERE username = (:username)";
+
+            $stmt = $this->conn->prepare($sql) or die("Praparing sql statement failed.");
+
+            $stmt->bindParam(':username', $item->user);
+
+            $stmt->execute();
+            $user_id = $stmt->fetchColumn();
+
             $sql = "INSERT INTO
             items (name, description, price, available, type, user, image)
             VALUES (:name, :description, :price, :available, :type, :user, :image)";
@@ -48,7 +59,7 @@ class Database{
             $stmt->bindParam(':price', $item->price);
             $stmt->bindParam(':available', $item->available);
             $stmt->bindParam(':type', $item->type);
-            $stmt->bindParam(':user', $item->user);
+            $stmt->bindParam(':user', $user_id);
             $stmt->bindParam(':image', $item->image);
 
             $stmt->execute();

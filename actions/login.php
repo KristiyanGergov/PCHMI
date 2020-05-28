@@ -25,7 +25,8 @@ function init()
     }
     $sessionID = "lalalalalalla";
     $_SESSION["token"] = $sessionID;
-    echo $_SESSION["token"];
+    $_SESSION["user"] = $username;
+    
     echo '<a href="../index.html">back!</a>';
     header("Location: ../index.php");
 }

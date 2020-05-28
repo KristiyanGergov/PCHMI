@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $username =  "";
 $password = "";
@@ -56,11 +57,13 @@ function extract_item_variables()
 
         $price = test_input($_POST["price"]);
 
+        $available = test_input($_POST["available"]);
+
         $type = ($_POST["type"]);
 
-        $user = ($_POST["user"]);
-
-        $target_dir = "pictures/";
+        $user = ($_SESSION["user"]);
+        
+        $target_dir = "../pictures/";
 
         $str=rand(); 
         $result = md5($str); 
@@ -106,9 +109,10 @@ function extract_item_variables()
 
     }
     return [
-        'name' => $username,
-        'description' => $password,
+        'name' => $name,
+        'description' => $description,
         'price' => $price,
+        'available' => $available,
         'type' => $type,
         'user' => $user,
         'image' => $target_file
