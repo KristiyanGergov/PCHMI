@@ -18,7 +18,7 @@
 }
 </style>";
 ?>
-<?php include "view/header.html"; ?>
+<?php include "view/header.php"; ?>
 <?php include "view/topnavigation.html"; ?>
 
 <br/>
