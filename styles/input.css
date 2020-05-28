@@ -5,3 +5,9 @@ input[type=text], input[type=password] {
     display: inline-block;
     box-sizing: border-box;
 }
+
+input[type=file]
+{
+    size: 50px;
+    font-size:500px;
+}
