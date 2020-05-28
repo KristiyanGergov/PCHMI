@@ -10,8 +10,8 @@
 
 <?php
 if(isset($_SESSION["token"])) {
-    echo '<a href="./view/profile.html"><h3 style="margin-right: 60px; float: right; color: white">Profile</h3></a>
-    <a href="./view/logout.php"><h3 style="margin-right: 60px; float: right; color: white">Logout</h3></a>';
+    echo '<a href="./view/logout.php"><h3 style="margin-right: 60px; float: right; color: white">Logout</h3></a>
+    <a href="./view/profile.html"><h3 style="margin-right: 60px; float: right; color: white">Profile</h3></a>';
 } else {
     echo  '<a href="./view/register.html"><h3 style="margin-right: 60px; float: right; color: white">Register</h3></a>
            <a href="./view/login.php"><h3 style="margin-right: 60px; float: right; color: white">Login</h3></a>';
