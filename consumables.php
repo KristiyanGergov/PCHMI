@@ -1,5 +1,5 @@
 <?php
-    session_start();
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -13,15 +13,15 @@
 <body>
 
 <?php echo "<style>
-#bowls {
+#consumables {
     font-size: larger;
     color: black;
     background-color: #67ff67;
 }
 </style>";
 ?>
-<?php include "view/header.php";?>
-<?php include "view/topnavigation.html";?>
+<?php include "view/header.php"; ?>
+<?php include "view/topnavigation.html"; ?>
 
 <hr style="margin-top: 20px">
 
@@ -36,6 +36,7 @@
     <a href="#">6</a>
     <a href="#">&raquo;</a>
 </div>
+
 
 <div class="row">
     <div class="column" style="background-color:#aaa;">
