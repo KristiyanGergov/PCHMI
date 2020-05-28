@@ -1,7 +1,5 @@
 <?php
 
-include "entities/Item.php";
-
 # Usage: generate_item_rows($items) -> returns the needed string with the html divs
 
 function generate_item_div($item)

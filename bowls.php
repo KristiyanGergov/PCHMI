@@ -3,8 +3,7 @@
     // include $_SERVER['DOCUMENT_ROOT'] . "/PCHMI/database";
     include "database/Database.php";
     $db = new Database();
-    $rows = $db->get_items("bowls", 1);
-    var_dump($rows);
+    $rows = $db->get_items("shisha", 1);
 ?>
 
 <!DOCTYPE html>
@@ -43,55 +42,16 @@
 </div>
 
 <?php
+    include "entities/Item.php";
+    include "actions/generate_item_list.php";
 
+    $items = [];
+    foreach ($rows as $row) {
+        $items[] = new Item($row['name'], $row['description'], $row['price'], $row['available'], $row['type'], $row['user'], $row['image']);
+    }
+
+    echo generate_item_rows($items);
 ?>
 
-<div class="row">
-    <?php
-        //  get_items("bowl", 1);
-    ?>
-    <div class="column" style="background-color:#aaa;">
-        <img src="pictures/aeon.png" alt="aeon">
-        <div class="name">Name of product</div>
-        <div class="price">Price of product</div>
-    </div>
-    <div class="column" style="background-color:#bbb;">
-        <img src="pictures/aeon.png" alt="aeon">
-        <div class="name">Name of product</div>
-        <div class="price">Price of product</div>
-    </div>
-    <div class="column" style="background-color:#ccc;">
-        <img src="pictures/aeon.png" alt="aeon">
-        <div class="name">Name of product</div>
-        <div class="price">Price of product</div>
-    </div>
-    <div class="column" style="background-color:#ccc;">
-        <img src="pictures/aeon.png" alt="aeon">
-        <div class="name">Name of product</div>
-        <div class="price">Price of product</div>
-    </div>
-</div>
-<div class="row">
-    <div class="column" style="background-color:#aaa;">
-        <img src="pictures/aeon.png" alt="aeon">
-        <div class="name">Name of product</div>
-        <div class="price">Price of product</div>
-    </div>
-    <div class="column" style="background-color:#bbb;">
-        <img src="pictures/aeon.png" alt="aeon">
-        <div class="name">Name of product</div>
-        <div class="price">Price of product</div>
-    </div>
-    <div class="column" style="background-color:#ccc;">
-        <img src="pictures/aeon.png" alt="aeon">
-        <div class="name">Name of product</div>
-        <div class="price">Price of product</div>
-    </div>
-    <div class="column" style="background-color:#ccc;">
-        <img src="pictures/aeon.png" alt="aeon">
-        <div class="name">Name of product</div>
-        <div class="price">Price of product</div>
-    </div>
-</div>
 </body>
 </html>

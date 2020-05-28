@@ -100,14 +100,9 @@ class Database{
             $stmt->bindParam(':type', $type);
             $stmt->execute();
 
-            // $result = $stmt->get_result();
-            $result = $stmt->fetch(PDO::FETCH_ASSOC);
-            var_dump($result);
-
             $rows = array();
-            while ($row = $result->fetch_assoc()){
-               // $item = new Item($row['name'], $row['description'], $row['price'], $row['available'], $row['type'], $row['user'], $row['image']);
-                $rows[] = $row;
+            while($result = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $rows[] = $result;
             }
             return $rows;
         } catch (PDOException $e) {
