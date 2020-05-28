@@ -1,3 +1,7 @@
+<?php 
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,15 +16,12 @@
 </div>
 
     <div class="container">
-        <h2 class="greeting">Hello, </h2>
+        <h2 class="greeting">Hello, <?echo $_SESSION["user"]?></h2>
         <h3></h3>
 
         <br/>
         <div class="orders">
-            <h2>Orders: </h2>
-        </div>
-        <div class="rents">
-            <h2>Rents: </h2>
+            <h2>Your items: </h2>
         </div>
     </div>
 
