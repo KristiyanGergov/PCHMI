@@ -26,8 +26,8 @@ if(isset($_SESSION["token"])) {
 }
 </style>";
 ?>
-<?php include "header.html";?>
-<?php include "topnavigation.html";?>
+<?php include "view/header.html";?>
+<?php include "view/topnavigation.html";?>
 
 <hr style="margin-top: 20px">
 
@@ -45,22 +45,22 @@ if(isset($_SESSION["token"])) {
 
 <div class="row">
     <div class="column" style="background-color:#aaa;">
-        <img src="aeon.png" alt="aeon">
+        <img src="pictures/aeon.png" alt="aeon">
         <div class="name">Name of product</div>
         <div class="price">Price of product</div>
     </div>
     <div class="column" style="background-color:#bbb;">
-        <img src="aeon.png" alt="aeon">
+        <img src="pictures/aeon.png" alt="aeon">
         <div class="name">Name of product</div>
         <div class="price">Price of product</div>
     </div>
     <div class="column" style="background-color:#ccc;">
-        <img src="aeon.png" alt="aeon">
+        <img src="pictures/aeon.png" alt="aeon">
         <div class="name">Name of product</div>
         <div class="price">Price of product</div>
     </div>
     <div class="column" style="background-color:#ccc;">
-        <img src="aeon.png" alt="aeon">
+        <img src="pictures/aeon.png" alt="aeon">
         <div class="name">Name of product</div>
         <div class="price">Price of product</div>
     </div>

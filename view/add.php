@@ -25,7 +25,7 @@
 
 <div class="row">
     <div class="column" style="background-color:#aaa;">
-        <img src="aeon.png" alt="aeon">
+        <img src="pictures/aeon.png" alt="aeon">
     </div>
 
     <div class="column" style="text-align: center; background-color:#bbb;">
