@@ -4,7 +4,7 @@
 
 <div class="heading">
     <a href="index.php"><img src="pictures/aeon.png" alt="aeon" class="aeon"></a>
-    <h1>SHISHA SHARE</h1>
+    <a href="index.php"><h1>SHISHA SHARE</h1></a>
 
 </div>
 
