@@ -1,6 +1,7 @@
 
 <?php
-    function get_delete_button($deletable) {
+
+    function get_delete_button($item, $deletable) {
         if ($deletable) {
             return '<button style="margin-top: 20px" class="button" type="submit">Delete Item</button>';
         } else {
@@ -15,9 +16,11 @@
                 <img style="display:block;margin:auto; border: 3px solid #ddd;" id="selectedImage" src="' . $item->image .'" alt="item">
             </div>
 
-            <form action="actions/add_item.php" method="POST" enctype="multipart/form-data">
+            <form action="actions/delete_item.php" method="DELETE" enctype="multipart/form-data">
                 <div>
                     <div class="column">
+                        <input type="hidden" name="id" value="'. $item->id .'">
+
                         <label for="productName"><b>Name of product:</b></label>
                         <h3>' . $item->name . '</h3>
 
@@ -35,7 +38,7 @@
 
                     </div>
                 </div>
-                ' . get_delete_button($deletable) . '
+                ' . get_delete_button($item, $deletable) . '
             </form>
         </div>
 

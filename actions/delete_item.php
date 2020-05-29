@@ -8,11 +8,13 @@ function delete_item($id)
     {
         return;
     }
-    
+
     $database = new Database();
     $database->delete_item($id);
 
     header("Location: ../view/profile.php");
 }
+
+delete_item($_DELETE['id']);
 
 ?>
