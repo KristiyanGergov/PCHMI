@@ -4,7 +4,7 @@ include "../database/Database.php";
 
 function delete_item($id)
 {
-    if ($_SERVER["REQUEST_METHOD"] != "DELETE")
+    if ($_SERVER["REQUEST_METHOD"] != "POST")
     {
         return;
     }
