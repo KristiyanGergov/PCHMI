@@ -6,7 +6,6 @@ class Database{
 
     public function __construct()
     {
-        $configs = include "../config.php";
         $host = 'localhost';
         $db = 'shisha_share';
         $username = 'root';
@@ -94,6 +93,36 @@ class Database{
 
             $stmt = $this->conn->prepare($sql) or die("Praparing sql statement failed.");
             $stmt->bindParam(':type', $type);
+            $stmt->execute();
+
+            $rows = array();
+            while($result = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $rows[] = $result;
+            }
+            return $rows;
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+        }
+    }
+
+    function get_user_items($user){
+        try {
+
+            $sql = "SELECT id FROM users
+            WHERE username = (:username)";
+
+            $stmt = $this->conn->prepare($sql) or die("Praparing sql statement failed.");
+
+            $stmt->bindParam(':username', $user);
+
+            $stmt->execute();
+            $user_id = $stmt->fetchColumn();
+
+            $sql = "SELECT * from items
+            WHERE user = (:user)";
+
+            $stmt = $this->conn->prepare($sql) or die("Praparing sql statement failed.");
+            $stmt->bindParam(':user', $user_id);
             $stmt->execute();
 
             $rows = array();

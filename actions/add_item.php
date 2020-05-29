@@ -25,7 +25,7 @@ function init()
     $database = new Database();
     $database->add_item($item);
 
-    header("Location: ../view/profile.php");
+    header("Location: ../profile.php");
 }
 
 init();
