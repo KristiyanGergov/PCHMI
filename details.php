@@ -2,12 +2,20 @@
     session_start();
     include "database/Database.php";
     include "entities/Item.php";
+    include "actions/generate_product_html.php";
 
     $id = $_GET['id'];
 
     $db = new Database();
     $row = $db->get_item($id);
     $item = new Item($row['name'], $row['description'], $row['price'], $row['available'], $row['type'], $row['user'], $row['image'], $id);
+    $deletable = false;
+    if(isset($_SESSION["user"])) {
+      $logged_user_id = $db->user_id_from_name($_SESSION["user"]);
+      $owner_user_id = $db->user_id_from_name($item->user);
+      $deletable = ($logged_user_id == $owner_user_id);
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +34,7 @@
 <hr style="margin-top: 20px">
 
 <?php
-    var_dump($item);
+    echo generate_product_html($item, $deletable);
 ?>
 
 </body>

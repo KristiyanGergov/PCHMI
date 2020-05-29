@@ -105,9 +105,8 @@ class Database{
         }
     }
 
-    function get_user_items($user){
+    function user_id_from_name($name) {
         try {
-
             $sql = "SELECT id FROM users
             WHERE username = (:username)";
 
@@ -117,6 +116,15 @@ class Database{
 
             $stmt->execute();
             $user_id = $stmt->fetchColumn();
+            return $user_id;
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+        }
+    }
+
+    function get_user_items($user){
+        try {
+            $user_id = $this->user_id_from_name($user);
 
             $sql = "SELECT * from items
             WHERE user = (:user)";
@@ -160,6 +168,24 @@ class Database{
             $rows = array();
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
             return $result;
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+        }
+    }
+
+    function get_newest() {
+        try {
+            $sql = "SELECT * FROM items ORDER BY id DESC LIMIT 4";
+
+
+            $stmt = $this->conn->prepare($sql) or die("Praparing sql statement failed.");
+            $stmt->execute();
+
+            $rows = array();
+            while($result = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $rows[] = $result;
+            }
+            return $rows;
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
         }
