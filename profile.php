@@ -44,11 +44,14 @@ foreach ($rows as $row) {
 <div class="container">
     <h2 class="greeting">Hello, <? echo $_SESSION["user"] ?></h2>
     <div class="orders">
-        <h2>Your items: </h2>
-
         <?php
         include "actions/generate_item_list.php";
-        echo generate_item_rows($items);
+        if (count($items) != 0) {
+            echo "<h2>Your items: </h2>";
+            echo generate_item_rows($items);
+        } else {
+            echo '<a href="add.php"><h2>You have no items.. want to add some?<h2></a>';
+        }
         ?>
     </div>
 </div>
