@@ -2,7 +2,7 @@
     session_start();
 ?>
 
-<div class="heading" style="size: 500px">
+<div class="heading">
     <a href="index.php"><img src="pictures/aeon.png" alt="aeon" class="aeon"></a>
     <h1>SHISHA SHARE</h1>
 

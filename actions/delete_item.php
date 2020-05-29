@@ -12,7 +12,7 @@ function delete_item($id)
     $database = new Database();
     $database->delete_item($id);
 
-    header("Location: ../view/profile.php");
+    header("Location: ../profile.php");
 }
 
 delete_item($_POST['id']);
