@@ -12,7 +12,7 @@
         return '
         <div class="row" style="background-color:#aaa;">
             <div class="column">
-                <img style="display:block;margin:auto; border: 3px solid #ddd;" id="selectedImage" src="' . $item->img .'" alt="plus">
+                <img style="display:block;margin:auto; border: 3px solid #ddd;" id="selectedImage" src="' . $item->image .'" alt="item">
             </div>
 
             <form action="actions/add_item.php" method="POST" enctype="multipart/form-data">
