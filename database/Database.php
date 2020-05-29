@@ -112,7 +112,7 @@ class Database{
 
             $stmt = $this->conn->prepare($sql) or die("Praparing sql statement failed.");
 
-            $stmt->bindParam(':username', $user);
+            $stmt->bindParam(':username', $name);
 
             $stmt->execute();
             $user_id = $stmt->fetchColumn();
@@ -125,7 +125,6 @@ class Database{
     function get_user_items($user){
         try {
             $user_id = $this->user_id_from_name($user);
-
             $sql = "SELECT * from items
             WHERE user = (:user)";
 
