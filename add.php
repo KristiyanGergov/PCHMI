@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if(!isset($_SESSION["token"])) {
+if (!isset($_SESSION["token"])) {
     header("Location: view/login.php");
 }
 ?>
@@ -53,7 +53,10 @@ if(!isset($_SESSION["token"])) {
 
 <div class="row" style="background-color:#aaa;">
     <div class="column">
-        <img style="display:block;margin:auto; border: 3px solid #ddd;" id="selectedImage" src="pictures/plus.png" alt="plus">
+        <label for="file-input">
+            <img style="cursor: pointer;display:block;margin:auto; border: 3px solid #ddd;" id="selectedImage" src="pictures/plus.png"
+                 alt="plus">
+        </label>
     </div>
 
     <form action="actions/add_item.php" method="POST" enctype="multipart/form-data">
@@ -83,7 +86,9 @@ if(!isset($_SESSION["token"])) {
                     </select>
                 </label>
 
-                <input onchange="readURL(this);" style="margin-top: 20px" type="file" class="field" name="image"
+                <input id="file-input" onchange="readURL(this);" style="margin-top: 20px" type="file"
+                       class="field"
+                       name="image"
                        required>
                 <button style="margin-top: 20px" class="button" type="submit">Add</button>
             </div>
