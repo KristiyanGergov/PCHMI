@@ -11,9 +11,8 @@
     $item = new Item($row['name'], $row['description'], $row['price'], $row['available'], $row['type'], $row['user'], $row['image'], $id);
     $deletable = false;
     if(isset($_SESSION["user"])) {
-      $logged_user_id = $db->user_id_from_name($_SESSION["user"]);
-      $owner_user_id = $db->user_id_from_name($item->user);
-      $deletable = ($logged_user_id == $owner_user_id);
+      $logged_user_id = $db->user_id_from_name($_SESSION["user"]); 
+      $deletable = ($logged_user_id == $item->user);
     }
 
 ?>
