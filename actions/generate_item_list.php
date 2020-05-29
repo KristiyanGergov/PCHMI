@@ -6,7 +6,7 @@ function generate_item_div($item)
 {
     return
     '<div class="column" style="background-color:#aaa;">
-        <img src="'. $item->image .'" alt="aeon">
+        <a href="details.php?id='. $item->id .'"><img src="'. $item->image .'" alt="aeon"></a>
         <div class="name">'. $item->name .'</div>
         <div class="price">'. $item->price .'</div>
     </div>'."\n   ";

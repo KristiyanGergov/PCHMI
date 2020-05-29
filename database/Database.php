@@ -138,11 +138,28 @@ class Database{
     function delete_item($id){
         try {
             $sql = "DELETE from items
+             WHERE id = (:id)";
+
+            $stmt = $this->conn->prepare($sql) or die("Praparing sql statement failed.");
+            $stmt->bindParam(':id', $id);
+            $stmt->execute();
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+        }
+    }
+
+    function get_item($id) {
+        try {
+            $sql = "SELECT * from items
             WHERE id = (:id)";
 
             $stmt = $this->conn->prepare($sql) or die("Praparing sql statement failed.");
             $stmt->bindParam(':id', $id);
             $stmt->execute();
+
+            $rows = array();
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $result;
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
         }
