@@ -89,6 +89,7 @@ if (!isset($_SESSION["token"])) {
                 <input id="file-input" onchange="readURL(this);" style="margin-top: 20px" type="file"
                        class="field"
                        name="image"
+                       accept="image/x-png,image/jpeg"
                        required>
                 <button style="margin-top: 20px" class="button" type="submit">Add</button>
             </div>
