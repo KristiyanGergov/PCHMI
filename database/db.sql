@@ -2,7 +2,7 @@ CREATE DATABASE shisha_share;
 CREATE TABLE users (
   id       INT AUTO_INCREMENT PRIMARY KEY,
   email    VARCHAR(63),
-  username VARCHAR(63),
+  username VARCHAR(63) UNIQUE,
   contact  VARCHAR(63),
   pass     VARCHAR(255)
 );
