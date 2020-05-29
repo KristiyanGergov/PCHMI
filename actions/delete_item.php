@@ -15,6 +15,6 @@ function delete_item($id)
     header("Location: ../view/profile.php");
 }
 
-delete_item($_DELETE['id']);
+delete_item($_POST['id']);
 
 ?>

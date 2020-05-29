@@ -16,7 +16,7 @@
                 <img style="display:block;margin:auto; border: 3px solid #ddd;" id="selectedImage" src="' . $item->image .'" alt="item">
             </div>
 
-            <form action="actions/delete_item.php" method="DELETE" enctype="multipart/form-data">
+            <form action="actions/delete_item.php" method="POST" enctype="multipart/form-data">
                 <div>
                     <div class="column">
                         <input type="hidden" name="id" value="'. $item->id .'">
