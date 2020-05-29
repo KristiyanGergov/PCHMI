@@ -9,7 +9,7 @@ class Database{
         $host = 'localhost';
         $db = 'shisha_share';
         $username = 'root';
-        $pass = '';
+        $pass = '1234';
         $this->conn = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $username, $pass);
     }
 
@@ -168,6 +168,24 @@ class Database{
             $rows = array();
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
             return $result;
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+        }
+    }
+
+    function get_newest() {
+        try {
+            $sql = "SELECT * FROM items ORDER BY id DESC LIMIT 4";
+
+
+            $stmt = $this->conn->prepare($sql) or die("Praparing sql statement failed.");
+            $stmt->execute();
+
+            $rows = array();
+            while($result = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $rows[] = $result;
+            }
+            return $rows;
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
         }
