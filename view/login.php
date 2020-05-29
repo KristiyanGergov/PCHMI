@@ -30,11 +30,11 @@
         <label>
             <input type="checkbox" checked="checked" name="remember"> Remember me
         </label>
+        <label>
+            <a href="register.html"><button class="reg_button" style="background-color:#434547">Register</button></a>
+        </label>
     </div>
 </form>
-<?php
-    echo  '<a href="register.html"><h3 style="margin-right: 60px; float: right; color: white">Register</h3></a>';
-?>
 
 </body>
 </html>
