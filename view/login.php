@@ -32,6 +32,9 @@
         </label>
     </div>
 </form>
+<?php
+    echo  '<a href="./view/register.html"><h3 style="margin-right: 60px; float: right; color: white">Register</h3></a>';
+?>
 
 </body>
 </html>
