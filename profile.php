@@ -7,7 +7,7 @@
     $rows = $db->get_user_items($_SESSION["user"]);
     $items = [];
     foreach ($rows as $row) {
-        $items[] = new Item($row['name'], $row['description'], $row['price'], $row['available'], $row['type'], $row['user'], $row['image']);
+        $items[] = new Item($row['name'], $row['description'], $row['price'], $row['available'], $row['type'], $row['user'], $row['image'], $row['id']);
     }
 ?>
 
