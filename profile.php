@@ -35,8 +35,6 @@ foreach ($rows as $row) {
 <?php include "view/topnavigation.html"; ?>
 
 <div class="heading" style="color: white; margin: auto; width: 20%">
-    <h1 style="display: block">SHISHA SHARE</h1>
-    <br/><br/><br/><br/>
     <h2 style="display: block">Your online shisha world</h2>
     <br/><br/>
 </div>
