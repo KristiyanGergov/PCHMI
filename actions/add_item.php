@@ -1,6 +1,5 @@
 <?php
 
-include "../entities/User.php";
 include "../util/validation.php";
 include "../database/Database.php";
 include "../entities/Item.php";

@@ -105,6 +105,19 @@ class Database{
             echo "Error: " . $e->getMessage();
         }
     }
+
+    function delete_item($id){
+        try {
+            $sql = "DELETE from items
+            WHERE id = (:id)";
+
+            $stmt = $this->conn->prepare($sql) or die("Praparing sql statement failed.");
+            $stmt->bindParam(':id', $id);
+            $stmt->execute();
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+        }
+    }
 }
 
 ?>
