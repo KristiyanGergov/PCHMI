@@ -3,12 +3,11 @@
     include "database/Database.php";
     include "entities/Item.php";
 
+    $id = $_GET['id'];
+
     $db = new Database();
-    $rows = $db->get_items("service", 1);
-    $items = [];
-    foreach ($rows as $row) {
-        $items[] = new Item($row['name'], $row['description'], $row['price'], $row['available'], $row['type'], $row['user'], $row['image'], $row['id']);
-    }
+    $row = $db->get_item($id);
+    $item = new Item($row['name'], $row['description'], $row['price'], $row['available'], $row['type'], $row['user'], $row['image'], $id);
 ?>
 
 <!DOCTYPE html>
@@ -21,22 +20,13 @@
 </head>
 <body>
 
-<?php echo "<style>
-#services {
-    font-size: larger;
-    color: black;
-    background-color: #67ff67;
-}
-</style>";
-?>
 <?php include "view/header.php";?>
 <?php include "view/topnavigation.html";?>
 
 <hr style="margin-top: 20px">
 
 <?php
-    include "actions/generate_item_list.php";
-    echo generate_item_rows($items);
+    var_dump($item);
 ?>
 
 </body>

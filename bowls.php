@@ -7,7 +7,7 @@
     $rows = $db->get_items("bowl", 1);
     $items = [];
     foreach ($rows as $row) {
-        $items[] = new Item($row['name'], $row['description'], $row['price'], $row['available'], $row['type'], $row['user'], $row['image']);
+        $items[] = new Item($row['name'], $row['description'], $row['price'], $row['available'], $row['type'], $row['user'], $row['image'], $row['id']);
     }
 ?>
 
@@ -33,18 +33,6 @@
 <?php include "view/topnavigation.html";?>
 
 <hr style="margin-top: 20px">
-
-<div class="pagination">
-    <a>Page: </a>
-    <a href="#">&laquo;</a>
-    <a href="#">1</a>
-    <a href="#" class="active">2</a>
-    <a href="#">3</a>
-    <a href="#">4</a>
-    <a href="#">5</a>
-    <a href="#">6</a>
-    <a href="#">&raquo;</a>
-</div>
 
 <?php
     include "actions/generate_item_list.php";
