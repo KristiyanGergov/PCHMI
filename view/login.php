@@ -13,7 +13,7 @@
 </div>
 
 <div class="imgcontainer">
-    <img src="../pictures/avatar.jpg" alt="Avatar" class="avatar">
+    <a href="../index.php"><img style="width:15%" src="../pictures/aeon.png" alt="Avatar" class="avatar"></a>
 </div>
 
 
