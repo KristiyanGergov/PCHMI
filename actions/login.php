@@ -15,7 +15,7 @@ function init()
     $fields = extract_login_variables();
     $username = $fields['username'];
     $password = $fields['password'];
-    
+
     $database = new Database();
     $hash = $database->get_pass_from_user($username);
 
@@ -27,7 +27,7 @@ function init()
         return;
     }
 
-    $_SESSION["token"] = $sessionID;
+    $_SESSION["token"] = time();
     $_SESSION["user"] = $username;
     header("Location: ../index.php");
 }

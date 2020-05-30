@@ -25,7 +25,7 @@ function init()
     $database = new Database();
     $database->add_user($user);
 
-    header("Location: ../index.php");
+    header("Location: ../view/login.php");
 }
 
 init();

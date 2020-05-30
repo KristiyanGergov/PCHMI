@@ -21,6 +21,13 @@ if (!isset($_SESSION["token"])) {
     <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
     <script>
         function readURL(input) {
+
+            if(input.files[0].size > 990000)
+            {
+                alert("File too big!");
+                input.value = "";
+            }
+
             if (input.files && input.files[0]) {
                 const reader = new FileReader();
 
