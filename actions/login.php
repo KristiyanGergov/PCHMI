@@ -15,19 +15,20 @@ function init()
     $fields = extract_login_variables();
     $username = $fields['username'];
     $password = $fields['password'];
-
+    
     $database = new Database();
     $hash = $database->get_pass_from_user($username);
 
     if($hash != $password) {
-        echo "Enter correct password, ve mindil";
+        echo "<script>
+        alert('Wrong username or password');
+        window.location.href=' ../view/login.php';
+        </script>";
         return;
     }
-    $sessionID = "lalalalalalla";
+
     $_SESSION["token"] = $sessionID;
     $_SESSION["user"] = $username;
-    
-    echo '<a href="../index.html">back!</a>';
     header("Location: ../index.php");
 }
 
