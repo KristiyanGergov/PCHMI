@@ -28,10 +28,10 @@
                         <h3>' . $item->description . '</h3>
 
                         <label for="price"><b>Price for renting:</b></label>
-                        <h3>' . $item->price . '</h3>
+                        <h3>' . $item->price . '$' . '</h3>
 
                         <label for="available"><b>Available for rent:</b></label>
-                        <h3>' . $item->available . '</h3>
+                        <h3>' . ($item->available ? "yes" : "no") . '</h3>
 
                         <label style="margin-top: 10px;">Type:</label>
                         <h3>' . $item->type . '</h3>

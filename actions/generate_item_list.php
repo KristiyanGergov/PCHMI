@@ -8,7 +8,7 @@ function generate_item_div($item)
     '<div class="column" style="background-color:#aaa;">
         <a href="details.php?id='. $item->id .'"><img src="'. $item->image .'"max-width="300px" max-height="250px" overflow:hidden alt="aeon"></a>
         <div class="name">'. $item->name .'</div>
-        <div class="price">'. $item->price .'</div>
+        <div class="price">'. $item->price . '$' .'</div>
     </div>'."\n   ";
 }
 

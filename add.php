@@ -76,7 +76,7 @@ if (!isset($_SESSION["token"])) {
                 <input id="description" type="text" placeholder="Enter product description" name="description" required>
 
                 <label for="price"><b>Price for renting</b></label>
-                <input id="price" type="text" placeholder="Enter Price for renting" name="price" required>
+                <input id="price" type="number" placeholder="Enter Price for renting" name="price" required>
 
                 <label style="margin-top: 10px" class="checkboxContainer">Available for rent
                     <input type="checkbox" checked="checked">
