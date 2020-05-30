@@ -30,11 +30,13 @@
         <label>
             <input type="checkbox" checked="checked" name="remember"> Remember me
         </label>
-        <label>
-            <a href="register.html"><button class="reg_button" style="background-color:#434547">Register</button></a>
-        </label>
     </div>
 </form>
-
+<br>
+<div class="container">
+    <label>
+       <a href="register.html"><button class="reg_button" style="background-color:#434547">Register</button></a>
+    </label>
+</div>
 </body>
 </html>
